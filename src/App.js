@@ -1,4 +1,4 @@
-import React , { useEffect, useState } from 'react';
+import React , { useEffect } from 'react';
 import './App.css';
 import Login from './Components/Login'
 import { getTokenFromUrl } from './Components/spotify'
@@ -9,8 +9,7 @@ import { useStateValue } from './StateProvider'
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [token, setToken] = useState(null);
-  const [{user} , dispatch] = useStateValue();
+  const [{user, token} , dispatch] = useStateValue();
 
   useEffect(() => {
       const hash = getTokenFromUrl();
@@ -19,7 +18,10 @@ function App() {
       let _token = hash.access_token;
 
       if(_token){
-        setToken(_token);
+        dispatch({
+          type: "SET_TOKEN",
+          token: _token,
+        });
 
         spotify.setAccessToken(_token);
         spotify.getMe().then(user =>{
@@ -27,18 +29,19 @@ function App() {
           dispatch({
             type: 'SET_USER',
             user: user
-          })
+          });
         })
       }
 
   }, []); 
   console.log('🙍‍♂️' , user);
+  console.log('Lool', token);
 
   return (
     <div>
       {
         token? (
-          <Player /> 
+          <Player spotify={spotify}/> 
         ) : (
           <Login />
         )
