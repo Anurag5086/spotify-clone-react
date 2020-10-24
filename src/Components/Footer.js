@@ -15,15 +15,20 @@ function Footer() {
     return (
         <div className="footer">
             <div className="footer__left">
-                <p>Song Details</p>
+                <img src="https://i1.sndcdn.com/artworks-000582483539-mot3o7-t500x500.jpg" alt="" className="footer__albumlogo"/>
+                <div className="footer__song">
+                    <h4>I Still</h4>
+                    <p>Jason Derlo</p>
+                </div>
+
             </div>
 
             <div className="footer__center">
-                <ShuffleIcon className="shuffle__icon"/>
-                <SkipPreviousIcon className="previous"/>
-                <PlayCircleOutlineIcon fontSize="large"/>
-                <SkipNextIcon className="next" />
-                <RepeatIcon className="repeat" />
+                <ShuffleIcon className="footer__green"/>
+                <SkipPreviousIcon className="footer__icon"/>
+                <PlayCircleOutlineIcon fontSize="large" className="footer__icon"/>
+                <SkipNextIcon className="footer__icon" />
+                <RepeatIcon className="footer__green" />
             </div>
 
             <div className="footer__right">
@@ -35,7 +40,7 @@ function Footer() {
                     <VolumeDownIcon />
                 </Grid>
                 <Grid item xs>
-                    <Slider aria-labelledby="continuous-slider" />
+                    <Slider aria-labelledby="continuous-slider"/>
                 </Grid>
                 </Grid>
             </div>

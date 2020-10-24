@@ -10,9 +10,33 @@
     justify-content: space-between;
     
 }
+.footer__song{
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.footer__albumlogo{
+    width: 60px;
+    margin-left: 5px;
+    margin-top: 5px;
+    object-fit: contain;
+}
 
 .footer__left{
     flex: 0.3;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.footer__right * .MuiSlider-root{
+    color: #1db954;
+}
+
+.footer__icon:hover,
+.footer__green:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2) !important;
 }
 
 .footer__center{
@@ -29,4 +53,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.footer__green{
+    color: #1db954;
 }

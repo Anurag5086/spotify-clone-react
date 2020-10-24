@@ -5,4 +5,88 @@
     background-color: rgb(91, 87, 115);
     color: white;
     padding: 30px;
+    overflow-y: overlay;
+}
+
+.body__info{
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+
+}
+.body::-webkit-scrollbar {
+    display: none;
+  }
+.body__shuffle{
+    font-size: 80px !important;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.body__shuffle:hover{
+    transition: 100ms transform ease-in;
+    transform: scale(1.1);
+
+}
+
+.body__icons{
+    display: flex;
+    align-items: center;
+}
+
+.body__icons > .MuiSvgIcon-root{
+    margin-right: 20px;
+}
+
+@media only screen and (min-width: 1280px) {
+    .body__infoText > h4{
+        font-size: 22px;
+    }
+
+    .body__infoText > h1{
+        font-size: 48px;
+    }
+
+    .body__infoText > p{
+        font-size: 20px;
+    }
+  }
+
+@media only screen and (max-width: 1280px) {
+    .body__infoText > h4{
+        font-size: 18px;
+    }
+
+    .body__infoText > h1{
+        font-size: 30px;
+    }
+
+    .body__infoText > p{
+        font-size: 15px;
+    }
+  }
+
+@media only screen and (max-width: 900px) {
+    .body__infoText > h4{
+        font-size: 12px;
+    }
+
+    .body__infoText > h1{
+        font-size: 25px;
+    }
+
+    .body__infoText > p{
+        font-size: 10px;
+    }
+  }
+
+.body__infoText{
+    margin-left: 13px;
+    flex: 1;
+}
+
+.body__info > img {
+    height: 15vw;
+    box-shadow: 0 4px 60px black;
 }
